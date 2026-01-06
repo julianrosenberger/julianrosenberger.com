@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Julian Rosenberger - PhD Researcher</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-main: #111111;
+            --text-secondary: #444444;
+            --text-muted: #666666;
+            --accent-color: #000000;
+            --line-color: #e0e0e0;
+            --link-color: #111111;
+            --link-hover: #0056b3;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #f0f2f5;
+            color: var(--text-main);
+            line-height: 1.5;
+            font-size: 13.5px; /* Precision text size */
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        /* A4 Page Container */
+        .page {
+            width: 210mm;
+            /* Auto height for web, but printable */
+            background: white;
+            padding: 15mm 15mm;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        /* --- LINKS --- */
+        a {
+            text-decoration: none;
+            color: var(--link-color);
+            transition: color 0.15s ease;
+        }
+        
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        /* --- HEADER --- */
+        header {
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 34px;
+            letter-spacing: -0.8px;
+            text-transform: uppercase;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            letter-spacing: -0.2px;
+            margin-bottom: 24px;
+        }
+
+        /* Contact Bar */
+        .contact-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-main);
+            border-top: 2px solid var(--text-main); /* Thicker top line */
+            border-bottom: 1px solid var(--line-color);
+            padding: 14px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        .contact-item i {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        /* --- GRID LAYOUT --- */
+        .grid-section {
+            display: grid;
+            grid-template-columns: 130px 1fr;
+            gap: 30px;
+            padding: 24px 0;
+            border-bottom: 1px solid var(--line-color);
+            break-inside: avoid; /* Prevents splitting across PDF pages */
+        }
+
+        .grid-section:last-child {
+            border-bottom: none;
+        }
+
+        /* Left Column Labels */
+        .section-label {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: var(--text-muted);
+            padding-top: 3px; 
+        }
+
+        /* Content Styles */
+        .entry {
+            margin-bottom: 22px;
+        }
+
+        .entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .entry-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 2px;
+        }
+
+        .entry-title {
+            font-weight: 700;
+            font-size: 14.5px;
+            color: var(--text-main);
+        }
+
+        .entry-meta {
+            font-size: 12.5px;
+            font-family: 'Inter', monospace; /* Monospace numbers for alignment */
+            color: var(--text-muted);
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .entry-subtitle {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .entry-desc {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            text-align: justify;
+            line-height: 1.55;
+        }
+
+        /* Lists */
+        .entry-desc ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 6px;
+        }
+
+        .entry-desc li {
+            position: relative;
+            padding-left: 12px;
+            margin-bottom: 4px;
+        }
+
+        .entry-desc li::before {
+            content: "▪";
+            color: var(--text-muted);
+            position: absolute;
+            left: 0;
+            top: 1px;
+            font-size: 8px;
+        }
+
+        /* Tags */
+        .focus-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .tag {
+            background: #f4f4f4;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--text-secondary);
+            border: 1px solid #e5e5e5;
+        }
+
+        /* Publication Title Link */
+        .pub-link {
+            font-weight: 700;
+            text-decoration: none;
+            border-bottom: 1px dotted var(--text-muted);
+        }
+        .pub-link:hover {
+            border-bottom: 1px solid var(--link-hover);
+        }
+
+        /* --- PRINT CSS (CRITICAL FOR PDF) --- */
+        @media print {
+            @page {
+                size: A4;
+                margin: 0;
+            }
+            body {
+                background: none;
+                padding: 0;
+                width: 100%;
+                display: block;
+            }
+            .page {
+                box-shadow: none;
+                width: 100%;
+                margin: 0 auto;
+                padding: 15mm 15mm;
+                border: none;
+            }
+            .contact-item a {
+                text-decoration: none;
+                color: var(--text-main);
+            }
+            /* Force background colors */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- HEADER -->
+        <header>
+            <h1>Julian Rosenberger</h1>
+            <div class="subtitle">PhD Researcher in Interpretable Machine Learning & HCI</div>
+            
+            <div class="contact-bar">
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <a href="mailto:julian.rsbgr@gmail.com">julian.rsbgr@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/julian-rosenberger">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/julian-rosenberger">GitHub</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en">Google Scholar</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Germany</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- PROFILE -->
+        <div class="grid-section">
+            <div class="section-label">Profile</div>
+            <div class="entry-desc">
+                <strong>Bridging technical AI capabilities and human understanding.</strong><br>
+                PhD Researcher specializing in the intersection of Machine Learning (Interpretable AI) and HCI. Expert in conducting mixed-methods research—combining computational benchmarking with cognitive user studies—to build transparent, trustworthy systems for high-stakes domains like healthcare.
+            </div>
+        </div>
+
+        <!-- RESEARCH FOCUS -->
+        <div class="grid-section">
+            <div class="section-label">Focus Areas</div>
+            <div>
+                <div class="entry-desc">
+                    <strong>Core:</strong> Interpretable ML (IML) • Explainable AI (XAI) • Human-AI Interaction<br>
+                    <strong>Methods:</strong> NLP • Generalized Additive Models (GAMs) • User Experiments (A/B Testing)
+                </div>
+                <div class="focus-tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">HCI</span>
+                    <span class="tag">Quantitative Analysis</span>
+                    <span class="tag">User Studies</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- RESEARCH EXPERIENCE -->
+        <div class="grid-section">
+            <div class="section-label">Research Exp.</div>
+            <div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">PhD Researcher</span>
+                        <span class="entry-meta">Sept 2022 – Present</span>
+                    </div>
+                    <span class="entry-subtitle">Leipzig University & University of Regensburg</span>
+                    <div class="entry-desc">
+                        <ul>
+                            <li><strong>Cognitive Studies:</strong> Spearheading experiments (N=200+) to quantify the cognitive load of visual model outputs (GAM shape plots), directly informing interface design for non-expert users.</li>
+                            <li><strong>Technical Implementation:</strong> Implementing interpretable architectures using <strong>PyTorch</strong> and <strong>statsmodels</strong>; developing custom React/Python web interfaces for behavioral data capture.</li>
+                            <li><strong>Clinical Validation:</strong> Collaborating with medical professionals to validate ML models on <strong>MIMIC-III</strong> datasets, ensuring algorithmic output aligns with domain knowledge.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Research Assistant</span>
+                        <span class="entry-meta">Mar 2021 – Aug 2022</span>
+                    </div>
+                    <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
+                    <div class="entry-desc">
+                        Supported research in Computer Vision and NLP. Tutored "Introduction to Computer Science" for undergraduate students.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="grid-section">
+            <div class="section-label">Education</div>
+            <div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Ph.D. in Information Systems</span>
+                        <span class="entry-meta">Exp. 2026</span>
+                    </div>
+                    <span class="entry-subtitle">Leipzig University / University of Regensburg</span>
+                    <div class="entry-desc">
+                        <strong>Thesis:</strong> "The Role of Interpretability in User-AI Interaction".<br>
+                        Nominated for the prestigious <strong>ECIS 2025 Doctoral Consortium</strong>.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">M.Sc. International Information Systems</span>
+                        <span class="entry-meta">2023</span>
+                    </div>
+                    <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
+                    <div class="entry-desc">
+                        Grade: 1.2 (Distinction). Top 5% of Class. Specialization in AI & HCI.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PUBLICATIONS -->
+        <div class="grid-section">
+            <div class="section-label">Selected Papers</div>
+            <div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <a href="#" class="pub-link entry-title">CareerBERT: Matching Resumes to Jobs</a>
+                        <span class="entry-meta">Expert Systems with Applications (2024)</span>
+                    </div>
+                    <div class="entry-desc">
+                        Developed a Transformer-based recommender system (BERT) for HR tech, validating LLM application on unstructured resume data.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <a href="#" class="pub-link entry-title">Navigating the Rashomon Effect</a>
+                        <span class="entry-meta">ECIS 2025 (Cond. Accepted)</span>
+                    </div>
+                    <div class="entry-desc">
+                        Designed adaptive interfaces that tailor interpretable model explanations to individual user cognitive styles.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <a href="#" class="pub-link entry-title">Transparency & Data-Sharing</a>
+                        <span class="entry-meta">Wirtschaftsinformatik (WI 2024)</span>
+                    </div>
+                    <div class="entry-desc">
+                        Conducted scenario-based experiments showing how model transparency significantly alters user trust and privacy decisions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- INDUSTRY EXPERIENCE -->
+        <div class="grid-section">
+            <div class="section-label">Industry Exp.</div>
+            <div>
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Working Student: Product Design</span>
+                        <span class="entry-meta">Dec 2020 – Apr 2021</span>
+                    </div>
+                    <span class="entry-subtitle">Allianz Technology SE, Munich</span>
+                    <div class="entry-desc">
+                        Conducted UX research and evaluated design tools (migration to Figma) to optimize frontend workflows. Collaborated with developers on SPA components.
+                    </div>
+                </div>
+
+                <div class="entry">
+                    <div class="entry-header">
+                        <span class="entry-title">Technical Sales Manager</span>
+                        <span class="entry-meta">Oct 2018 – Feb 2020</span>
+                    </div>
+                    <span class="entry-subtitle">Hufschmied Zerspanungssysteme</span>
+                    <div class="entry-desc">
+                        Managed technical sales territories in Austria/Bavaria. Translated customer technical requirements into product solutions.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS & SERVICE -->
+        <div class="grid-section">
+            <div class="section-label">Skills & Service</div>
+            <div>
+                <div class="entry-desc">
+                    <strong>Languages:</strong> Python (Advanced), R, SQL, HTML/CSS<br>
+                    <strong>ML Frameworks:</strong> PyTorch, TensorFlow, Hugging Face, Scikit-learn, Pandas<br>
+                    <strong>Tools:</strong> Git, LaTeX, Figma, IBM SPSS<br>
+                    <strong>Languages:</strong> German (Native), English (Fluent - TOEFL 106)
+                </div>
+                <div style="margin-top: 12px;" class="entry-desc">
+                    <strong>Academic Service:</strong> Reviewer for ECIS 2024, WI 2024.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
