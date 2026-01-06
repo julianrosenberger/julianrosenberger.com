@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Julian Rosenberger</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- SHARED CSS WITH CV (For Consistency) --- */
+        :root {
+            --bg-color: #f0f2f5;
+            --page-bg: #ffffff;
+            --text-main: #111111;
+            --text-secondary: #444444;
+            --text-muted: #666666;
+            --line-color: #e0e0e0;
+            --link-color: #111111;
+            --link-hover: #0056b3;
+            --tag-bg: #f4f4f4;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.5;
+            font-size: 14px;
+            display: flex;
+            justify-content: center;
+            padding: 40px 0;
+        }
+
+        .page {
+            width: 210mm; /* A4 Width matching CV */
+            min-height: 297mm;
+            background: var(--page-bg);
+            padding: 15mm 15mm;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        /* --- NAV HEADER --- */
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--text-main);
+            margin-bottom: 30px;
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-left: 20px;
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+            text-decoration: underline;
+        }
+
+        /* --- PUBLICATION LIST --- */
+        .year-group {
+            margin-bottom: 30px;
+        }
+
+        .year-label {
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--text-muted);
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pub-item {
+            display: grid;
+            grid-template-columns: 1fr auto; /* Content | Links */
+            gap: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed var(--line-color);
+        }
+
+        .pub-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .pub-title {
+            font-weight: 700;
+            font-size: 15px;
+            color: var(--text-main);
+            margin-bottom: 4px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .pub-title:hover {
+            color: var(--link-hover);
+        }
+
+        .pub-authors {
+            font-size: 13.5px;
+            color: var(--text-secondary);
+            margin-bottom: 4px;
+        }
+
+        .pub-venue {
+            font-size: 13px;
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .pub-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            align-items: flex-end;
+        }
+
+        .btn-link {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: var(--text-secondary);
+            border: 1px solid var(--line-color);
+            padding: 4px 10px;
+            border-radius: 4px;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--tag-bg);
+        }
+
+        .btn-link:hover {
+            border-color: var(--text-main);
+            background: white;
+            color: var(--text-main);
+        }
+
+        .tag-status {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+        
+        .status-accepted { background: #e6f4ea; color: #1e8e3e; }
+        .status-review { background: #fce8e6; color: #c5221f; }
+
+        /* Highlight my name */
+        .me {
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: underline; 
+            text-decoration-color: #ddd;
+        }
+
+        @media print {
+            .page { box-shadow: none; margin: 0; width: 100%; }
+            body { background: white; padding: 0; }
+            .nav-links { display: none; } /* Hide nav on print */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <!-- Navigation -->
+        <nav class="nav-header">
+            <a href="index.html" class="nav-brand">Julian Rosenberger</a>
+            <div class="nav-links">
+                <a href="index.html">CV / Resume</a>
+                <a href="publications.html" class="active">Publications</a>
+                <a href="https://github.com/julian-rosenberger" target="_blank"><i class="fa-brands fa-github"></i></a>
+            </div>
+        </nav>
+
+        <!-- Container for JavaScript to populate -->
+        <div id="publications-container"></div>
+    </div>
+
+    <script>
+        // --- YOUR DATA ---
+        // Add new papers here. The script will handle the sorting and HTML generation.
+        const publications = [
+            {
+                year: 2025,
+                title: "Navigating the Rashomon Effect: How Personalization Can Help Adjust Interpretable Machine Learning Models to Individual Users",
+                authors: ["J. Rosenberger", "P. Schröppel", "S. Kruschel", "M. Kraus", "P. Zschech", "M. Förster"],
+                venue: "European Conference on Information Systems (ECIS 2025)",
+                status: "Conditionally Accepted",
+                pdf: "#", // Add your link here
+                code: "#"
+            },
+            {
+                year: 2025,
+                title: "Quantifying Visual Properties of GAM Shape Plots: Impact on Perceived Cognitive Load and Interpretability",
+                authors: ["S. Kruschel", "L. Bohlen", "J. Rosenberger", "P. Zschech", "M. Kraus"],
+                venue: "Hawaii International Conference on System Sciences (HICSS 2025)",
+                pdf: "#"
+            },
+            {
+                year: 2024,
+                title: "CareerBERT: Matching Resumes to ESCO Jobs in a Shared Embedding Space",
+                authors: ["J. Rosenberger", "L. Wolfrum", "S. Weinzierl", "M. Kraus", "P. Zschech"],
+                venue: "Expert Systems with Applications",
+                pdf: "https://doi.org/YOUR_DOI_HERE"
+            },
+            {
+                year: 2024,
+                title: "The Impact of Transparency in AI Systems on Users' Data-Sharing Intentions",
+                authors: ["J. Rosenberger", "S. Kuhlemann", "V. Tiefenbeck", "M. Kraus", "P. Zschech"],
+                venue: "Wirtschaftsinformatik (WI 2024)",
+                pdf: "#"
+            },
+            {
+                year: 2024,
+                title: "Leveraging Interpretable Machine Learning in Intensive Care",
+                authors: ["L. Bohlen", "J. Rosenberger", "P. Zschech", "M. Kraus"],
+                venue: "Annals of Operations Research",
+                pdf: "#"
+            },
+            {
+                year: 2024,
+                title: "Hate Speech and Sentiment of YouTube Video Comments From Public and Private Sources",
+                authors: ["S. Hofmann", "C. Sommermann", "M. Kraus", "P. Zschech", "J. Rosenberger"],
+                venue: "Wirtschaftsinformatik (WI 2024)",
+                pdf: "#"
+            },
+            {
+                year: "Under Review",
+                title: "Understanding Data-Sharing with AI Systems: The Roles of Transparency, Trust, and Processing Entity",
+                authors: ["J. Rosenberger", "S. Kuhlemann", "V. Tiefenbeck", "M. Kraus", "P. Zschech"],
+                venue: "Pacific Asia Journal of the AIS (PAJAIS)",
+                status: "Under Review"
+            }
+        ];
+
+        // --- RENDERING LOGIC ---
+        const container = document.getElementById('publications-container');
+        
+        // Group by Year
+        const grouped = publications.reduce((acc, pub) => {
+            (acc[pub.year] = acc[pub.year] || []).push(pub);
+            return acc;
+        }, {});
+
+        // Sort Years Descending (Under Review first, then 2025, 2024...)
+        const sortedYears = Object.keys(grouped).sort((a, b) => {
+            if (a === "Under Review") return -1;
+            if (b === "Under Review") return 1;
+            return b - a;
+        });
+
+        sortedYears.forEach(year => {
+            // Create Year Header
+            const yearHeader = document.createElement('div');
+            yearHeader.className = 'year-label';
+            yearHeader.textContent = year;
+            container.appendChild(yearHeader);
+
+            const yearGroup = document.createElement('div');
+            yearGroup.className = 'year-group';
+
+            grouped[year].forEach(pub => {
+                const pubEl = document.createElement('div');
+                pubEl.className = 'pub-item';
+
+                // Highlight my name
+                const formattedAuthors = pub.authors.map(author => 
+                    author.includes("Rosenberger") ? `<span class="me">${author}</span>` : author
+                ).join(", ");
+
+                // Status Badge
+                const statusBadge = pub.status 
+                    ? `<span class="tag-status ${pub.status.includes('Accept') ? 'status-accepted' : 'status-review'}">${pub.status}</span>` 
+                    : '';
+
+                // Buttons
+                let buttons = '';
+                if(pub.pdf && pub.pdf !== '#') buttons += `<a href="${pub.pdf}" target="_blank" class="btn-link"><i class="fa-regular fa-file-pdf"></i> PDF</a>`;
+                if(pub.code && pub.code !== '#') buttons += `<a href="${pub.code}" target="_blank" class="btn-link"><i class="fa-brands fa-github"></i> Code</a>`;
+                if(buttons === '') buttons = `<span class="btn-link" style="opacity:0.5; cursor:default;">PDF Coming Soon</span>`; // Placeholder
+
+                pubEl.innerHTML = `
+                    <div class="pub-content">
+                        <a href="${pub.pdf !== '#' ? pub.pdf : '#'}" class="pub-title">${pub.title} ${statusBadge}</a>
+                        <div class="pub-authors">${formattedAuthors}</div>
+                        <div class="pub-venue">${pub.venue}</div>
+                    </div>
+                    <div class="pub-links">
+                        ${buttons}
+                    </div>
+                `;
+                yearGroup.appendChild(pubEl);
+            });
+
+            container.appendChild(yearGroup);
+        });
+    </script>
+</body>
+</html>
