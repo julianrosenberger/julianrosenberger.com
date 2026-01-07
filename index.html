@@ -19,7 +19,7 @@
             --accent-color: #000000;
             --line-color: #eaeaea;
             --link-color: #1a1a1a;
-            --link-hover: #0056b3; 
+            --link-hover: #0056b3;
             --tag-bg: #f3f3f3;
         }
 
@@ -235,22 +235,18 @@
             <a href="#" class="nav-brand">JR</a>
             <div class="nav-links">
                 <a href="#about" class="active">About</a>
-                <!-- Link directly to Scholar for "Publications" -->
                 <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank">Publications <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 10px; margin-left: 2px;"></i></a>
-                <!-- Placeholder for future "Tools" page -->
-                <!-- <a href="tools.html">Tools</a> -->
             </div>
         </nav>
 
         <!-- HERO / ABOUT -->
         <section id="about" class="hero">
             <h1>Julian Rosenberger</h1>
-            <div class="subtitle">PhD Researcher in Interpretable Machine Learning & HCI</div>
+            <div class="subtitle">PhD Researcher in Human-AI Decision-Making</div>
             
             <p class="intro-text">
-                I am a PhD researcher at the <strong>University of Regensburg</strong> and <strong>TU Dresden</strong>, bridging the gap between technical AI capabilities and human understanding. 
-                <br><br>
-                My work focuses on <strong>Interpretable Machine Learning (IML)</strong> and <strong>Human-Computer Interaction (HCI)</strong>. I combine computational benchmarking with cognitive user studies to build transparent, trustworthy systems for high-stakes domains like healthcare and HR.
+                <strong>Investigating why explainable AI often fails to improve human decisions—and how to fix it.</strong><br>
+                Despite advances in XAI, challenges like automation bias, over-reliance, and mistrust persist. I combine large-scale behavioral experiments (N=200+) with technical ML implementation to understand these failures and design AI systems that align with human cognition and foster appropriate reliance.
             </p>
 
             <div class="social-links">
@@ -265,18 +261,20 @@
         <section id="research">
             <h2>Focus Areas</h2>
             <div class="tag-cloud">
-                <span class="tag">Interpretable ML</span>
-                <span class="tag">Explainable AI (XAI)</span>
-                <span class="tag">Human-AI Interaction</span>
-                <span class="tag">Generalized Additive Models (GAMs)</span>
-                <span class="tag">NLP</span>
-                <span class="tag">User Experiments</span>
+                <span class="tag">Human-AI Decision-Making</span>
+                <span class="tag">Cognitive Processing of AI</span>
+                <span class="tag">Appropriate Reliance</span>
+                <span class="tag">Trust Calibration</span>
+                <span class="tag">Behavioral Experiments</span>
+                <span class="tag">Cognitive Load Measurement</span>
+                <span class="tag">Dual-Process Theory</span>
+                <span class="tag">GAMs</span>
             </div>
         </section>
 
         <!-- PUBLICATIONS (Selected) -->
         <section id="publications">
-            <h2>Selected Publications</h2>
+            <h2>Selected Papers</h2>
             
             <div class="entry">
                 <div class="entry-header">
@@ -301,7 +299,7 @@
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">Understanding Data-Sharing with AI Systems</span>
-                    <span class="entry-meta">PAJAIS (2026, Conditionally Accepted)</span>
+                    <span class="entry-meta">PAJAIS (In Press)</span>
                 </div>
                 <div class="entry-desc">
                     Investigated dual-process dynamics in AI interactions; found that transparency's effectiveness in fostering data-sharing is contingent on pre-existing trust.
@@ -310,11 +308,21 @@
 
             <div class="entry">
                 <div class="entry-header">
-                    <a href="https://doi.org/10.1016/j.eswa.2025.127043" class="entry-title">CareerBERT: Matching Resumes to Jobs</a>
-                    <span class="entry-meta">Expert Systems with Applications (2025)</span>
+                    <span class="entry-title">Leveraging Interpretable ML in Intensive Care</span>
+                    <span class="entry-meta">Annals of Operations Research (2024)</span>
                 </div>
                 <div class="entry-desc">
-                    Architected a BERT-based recommender system for high-stakes HR domains; addressed fairness and transparency challenges in deploying LLMs.
+                    GAMs match black-box performance with <15 features in ICU prediction; validated with medical experts on MIMIC-III.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <a href="https://doi.org/10.1016/j.eswa.2025.127043" class="entry-title">CareerBERT: Matching Resumes to Jobs</a>
+                    <span class="entry-meta">Expert Systems w/ Apps (2025)</span>
+                </div>
+                <div class="entry-desc">
+                    Co-architected a BERT-based recommender system for high-stakes HR domains; addressed fairness and transparency challenges in deploying LLMs.
                 </div>
             </div>
             
@@ -335,30 +343,30 @@
                 <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
                 <div class="entry-desc">
                     <ul>
-                        <li><strong>Cognitive Studies:</strong> Spearheading experiments (N=200+) to quantify cognitive load of visual model outputs (GAMs).</li>
-                        <li><strong>Technical Implementation:</strong> Implementing interpretable architectures using <strong>PyTorch</strong> and <strong>statsmodels</strong>.</li>
-                        <li><strong>Clinical Validation:</strong> Validating ML models on <strong>MIMIC-III/IV</strong> datasets with medical professionals.</li>
+                        <li><strong>Experimental Research:</strong> Designed and ran large-scale online experiments with behavioral data capture; built custom React/Python platforms for user studies.</li>
+                        <li><strong>Technical Implementation:</strong> Developed interpretable ML architectures (GAMs, IGANN); statistical modeling and analysis pipelines.</li>
+                        <li><strong>Clinical Collaboration:</strong> Worked with ICU physicians to validate model outputs against domain expertise.</li>
                     </ul>
                 </div>
             </div>
 
             <div class="entry">
                 <div class="entry-header">
-                    <span class="entry-title">Research Assistant</span>
-                    <span class="entry-meta">2021 – 2022</span>
+                    <span class="entry-title">Student Research Assistant</span>
+                    <span class="entry-meta">Mar 2021 – Aug 2022</span>
                 </div>
                 <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
                 <div class="entry-desc">
-                    Supported Computer Vision and NLP research. Tutored "Introduction to Computer Science" based on Harvard's CS50 curriculum.
+                    Supported research in Computer Vision and NLP. Tutored "Introduction to Computer Science" based on Harvard's CS50 curriculum.
                 </div>
             </div>
 
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">Working Student: Product Design</span>
-                    <span class="entry-meta">2020 – 2021</span>
+                    <span class="entry-meta">Dec 2020 – Apr 2021</span>
                 </div>
-                <span class="entry-subtitle">Allianz Technology SE</span>
+                <span class="entry-subtitle">Allianz Technology SE, Munich</span>
                 <div class="entry-desc">
                     Conducted UX research and evaluated design tools (migration to Figma) for frontend workflows.
                 </div>
@@ -367,9 +375,9 @@
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">Technical Sales Manager</span>
-                    <span class="entry-meta">2018 – 2020</span>
+                    <span class="entry-meta">Oct 2018 – Feb 2020</span>
                 </div>
-                <span class="entry-subtitle">Hufschmied Zerspanungssysteme</span>
+                <span class="entry-subtitle">Hufschmied Zerspanungssysteme, Bobingen</span>
                 <div class="entry-desc">
                     Managed technical sales territories in Austria/Bavaria.
                 </div>
@@ -378,11 +386,11 @@
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">Dual Student: Insurance & Consulting</span>
-                    <span class="entry-meta">2015 – 2018</span>
+                    <span class="entry-meta">Oct 2015 – Sept 2018</span>
                 </div>
-                <span class="entry-subtitle">Allianz Beratungs- und Vertriebs-AG</span>
+                <span class="entry-subtitle">Allianz Beratungs- und Vertriebs-AG, Nuremberg</span>
                 <div class="entry-desc">
-                    Integrated practical training in customer consulting and acquisition alongside academic studies.
+                    Consulting and acquisition of customers. Participation in personnel projects.
                 </div>
             </div>
         </section>
@@ -395,7 +403,7 @@
                     <span class="entry-title">PhD in Information Systems</span>
                     <span class="entry-meta">Exp. 2026</span>
                 </div>
-                <span class="entry-subtitle">University of Regensburg / TU Dresden</span>
+                <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
                 <div class="entry-desc">
                     Thesis: "The Role of Interpretability in User-AI Interaction". Nominated for <strong>ECIS 2025 Doctoral Consortium</strong>.
                 </div>
@@ -404,19 +412,34 @@
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">M.Sc. International Information Systems</span>
-                    <span class="entry-meta">2020 - 2023</span>
+                    <span class="entry-meta">2023</span>
                 </div>
                 <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of Class.</div>
+                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of Class. Specialization in AI & HCI.</div>
             </div>
 
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">B.A. Economics (Insurance)</span>
-                    <span class="entry-meta">2015 - 2018</span>
+                    <span class="entry-meta">2018</span>
                 </div>
                 <span class="entry-subtitle">DHBW Mannheim (Dual Study w/ Allianz)</span>
-                <div class="entry-desc">Grade: 1.6. Bachelor Thesis on AI Acceptance.</div>
+                <div class="entry-desc">Grade: 1.6.</div>
+            </div>
+        </section>
+
+        <!-- SKILLS & SERVICE -->
+        <section id="skills">
+            <h2>Skills & Service</h2>
+            <div class="entry-desc">
+                <strong>Programming:</strong> Python, R, JavaScript/React<br>
+                <strong>ML Frameworks:</strong> PyTorch, Statsmodels, HuggingFace<br>
+                <strong>Tools:</strong> Git, LaTeX, Figma, IBM SPSS<br>
+                <strong>Languages:</strong> German (Native), English (Fluent - TOEFL 106)
+            </div>
+            <div style="margin-top: 12px;" class="entry-desc">
+                <strong>Service:</strong> Reviewer for ECIS, WI, Data Technologies and Applications.<br>
+                <strong>Teaching:</strong> Master's Seminars on Explainable AI and Scientific Writing.
             </div>
         </section>
 
