@@ -14,13 +14,3 @@ This site serves as a digital portfolio for my research in **Interpretable Machi
 -   **Selected Publications:** Key papers with links to PDFs/DOIs.
 
 -   **CV:** Research and industry experience timeline.
-
-### Tech Stack
-
--   **HTML5 / CSS3:** Built with a clean, responsive single-page layout.
-
--   **Google Fonts:** Using 'Inter' for typography.
-
--   **FontAwesome:** For social and UI icons.
-
--   **GitHub Pages:** Hosted directly from this repository.
