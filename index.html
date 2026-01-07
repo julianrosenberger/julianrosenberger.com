@@ -11,469 +11,421 @@
     
     <style>
         :root {
-            --bg-color: #ffffff;
-            --text-main: #111111;
-            --text-secondary: #444444;
-            --text-muted: #666666;
+            --bg-color: #fafafa; /* Softer background */
+            --container-bg: #ffffff;
+            --text-main: #1a1a1a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #737373;
             --accent-color: #000000;
-            --line-color: #e0e0e0;
-            --link-color: #111111;
-            --link-hover: #0056b3;
+            --line-color: #eaeaea;
+            --link-color: #1a1a1a;
+            --link-hover: #0056b3; 
+            --tag-bg: #f3f3f3;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-print-color-adjust: exact;
-            print-color-adjust: exact;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #f0f2f5;
+            background-color: var(--bg-color);
             color: var(--text-main);
-            line-height: 1.5;
-            font-size: 13.5px; /* Precision text size */
+            line-height: 1.6;
+            font-size: 15px; /* Slightly larger for web readability */
             display: flex;
             justify-content: center;
-            padding: 40px 0;
+            padding: 60px 20px;
         }
 
-        /* A4 Page Container */
-        .page {
-            width: 210mm;
-            /* Auto height for web, but printable */
-            background: white;
-            padding: 15mm 15mm;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            position: relative;
+        /* Responsive Container */
+        .container {
+            width: 100%;
+            max-width: 800px; /* Optimal reading width for a personal site */
+            background: var(--container-bg);
+            padding: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border-radius: 8px;
         }
 
-        /* --- LINKS --- */
-        a {
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line-color);
+        }
+
+        .nav-links a {
             text-decoration: none;
-            color: var(--link-color);
-            transition: color 0.15s ease;
-        }
-        
-        a:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
+            color: var(--text-muted);
+            font-weight: 500;
+            margin-left: 24px;
+            font-size: 14px;
+            transition: color 0.2s;
         }
 
-        /* --- HEADER --- */
-        header {
-            margin-bottom: 35px;
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-main);
+        }
+
+        .nav-brand {
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            margin-bottom: 50px;
         }
 
         h1 {
             font-weight: 800;
-            font-size: 34px;
-            letter-spacing: -0.8px;
-            text-transform: uppercase;
-            line-height: 1.1;
-            margin-bottom: 6px;
+            font-size: 36px;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+            line-height: 1.2;
         }
 
         .subtitle {
-            font-size: 16px;
+            font-size: 18px;
             color: var(--text-secondary);
             font-weight: 400;
-            letter-spacing: -0.2px;
             margin-bottom: 24px;
         }
 
-        /* Contact Bar */
-        .contact-bar {
+        .intro-text {
+            font-size: 16px;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            max-width: 650px;
+        }
+
+        /* Contact Icons */
+        .social-links {
             display: flex;
-            flex-wrap: wrap;
-            gap: 18px;
-            font-size: 13px;
-            font-weight: 500;
+            gap: 16px;
+        }
+
+        .social-links a {
             color: var(--text-main);
-            border-top: 2px solid var(--text-main); /* Thicker top line */
-            border-bottom: 1px solid var(--line-color);
-            padding: 14px 0;
+            font-size: 18px;
+            transition: transform 0.2s, color 0.2s;
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .contact-item i {
-            font-size: 12px;
-            color: var(--text-muted);
+        .social-links a:hover {
+            transform: translateY(-2px);
+            color: var(--link-hover);
         }
 
-        /* --- GRID LAYOUT --- */
-        .grid-section {
-            display: grid;
-            grid-template-columns: 130px 1fr;
-            gap: 30px;
-            padding: 24px 0;
-            border-bottom: 1px solid var(--line-color);
-            break-inside: avoid; /* Prevents splitting across PDF pages */
+        /* --- SECTIONS --- */
+        section {
+            margin-bottom: 60px;
         }
 
-        .grid-section:last-child {
-            border-bottom: none;
-        }
-
-        /* Left Column Labels */
-        .section-label {
-            font-size: 11px;
-            font-weight: 700;
+        h2 {
+            font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 0.08em;
             color: var(--text-muted);
-            padding-top: 3px; 
+            font-weight: 700;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--line-color);
+            padding-bottom: 8px;
         }
 
-        /* Content Styles */
+        /* --- ENTRIES --- */
         .entry {
-            margin-bottom: 22px;
-        }
-
-        .entry:last-child {
-            margin-bottom: 0;
+            margin-bottom: 32px;
         }
 
         .entry-header {
             display: flex;
             justify-content: space-between;
             align-items: baseline;
-            margin-bottom: 2px;
-        }
-
-        .entry-title {
-            font-weight: 700;
-            font-size: 14.5px;
-            color: var(--text-main);
-        }
-
-        .entry-meta {
-            font-size: 12.5px;
-            font-family: 'Inter', monospace; /* Monospace numbers for alignment */
-            color: var(--text-muted);
-            font-weight: 500;
-            text-align: right;
-        }
-
-        .entry-subtitle {
-            font-size: 13px;
-            color: var(--text-secondary);
-            font-style: italic;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .entry-desc {
-            font-size: 13.5px;
-            color: var(--text-secondary);
-            text-align: justify;
-            line-height: 1.55;
-        }
-
-        /* Lists */
-        .entry-desc ul {
-            list-style: none;
-            padding-left: 0;
-            margin-top: 6px;
-        }
-
-        .entry-desc li {
-            position: relative;
-            padding-left: 12px;
             margin-bottom: 4px;
         }
 
-        .entry-desc li::before {
-            content: "▪";
-            color: var(--text-muted);
-            position: absolute;
-            left: 0;
-            top: 1px;
-            font-size: 8px;
+        .entry-title {
+            font-weight: 600;
+            font-size: 16px;
+            color: var(--text-main);
+            text-decoration: none;
         }
 
-        /* Tags */
-        .focus-tags {
+        a.entry-title:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+
+        .entry-meta {
+            font-size: 14px;
+            color: var(--text-muted);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .entry-subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: block;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        .entry-desc {
+            font-size: 14.5px;
+            color: var(--text-secondary);
+        }
+
+        .entry-desc ul {
+            padding-left: 18px;
+            margin-top: 8px;
+        }
+        
+        .entry-desc li {
+            margin-bottom: 6px;
+        }
+
+        /* --- TAGS --- */
+        .tag-cloud {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 8px;
+            gap: 8px;
         }
 
         .tag {
-            background: #f4f4f4;
-            padding: 3px 8px;
-            border-radius: 4px;
-            font-size: 11.5px;
-            font-weight: 600;
+            background: var(--tag-bg);
             color: var(--text-secondary);
-            border: 1px solid #e5e5e5;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
         }
 
-        /* Publication Title Link */
-        .pub-link {
-            font-weight: 700;
-            text-decoration: none;
-            border-bottom: 1px dotted var(--text-muted);
-        }
-        .pub-link:hover {
-            border-bottom: 1px solid var(--link-hover);
+        /* --- FOOTER --- */
+        footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line-color);
+            font-size: 13px;
+            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
         }
 
-        /* --- PRINT CSS (CRITICAL FOR PDF) --- */
-        @media print {
-            @page {
-                size: A4;
-                margin: 0;
-            }
-            body {
-                background: none;
-                padding: 0;
-                width: 100%;
-                display: block;
-            }
-            .page {
-                box-shadow: none;
-                width: 100%;
-                margin: 0 auto;
-                padding: 15mm 15mm;
-                border: none;
-            }
-            .contact-item a {
-                text-decoration: none;
-                color: var(--text-main);
-            }
-            /* Force background colors */
-            * {
-                -webkit-print-color-adjust: exact !important;
-                print-color-adjust: exact !important;
-            }
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            .container { padding: 30px 20px; }
+            .entry-header { flex-direction: column; }
+            .entry-meta { margin-top: 2px; }
         }
     </style>
 </head>
 <body>
-    <div class="page">
-        <!-- HEADER -->
-        <header>
-            <nav style="margin-bottom: 20px; font-size: 13px; font-weight: 500;">
-                <span style="color: #111; border-bottom: 2px solid #111;">About Me</span>
-                <a href="publications.html" style="margin-left: 15px; color: #666; text-decoration: none;">Publications</a>
-            </nav>
+
+    <div class="container">
+        <!-- NAVIGATION -->
+        <nav>
+            <a href="#" class="nav-brand">JR</a>
+            <div class="nav-links">
+                <a href="#about" class="active">About</a>
+                <!-- Link directly to Scholar for "Publications" -->
+                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank">Publications <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 10px; margin-left: 2px;"></i></a>
+                <!-- Placeholder for future "Tools" page -->
+                <!-- <a href="tools.html">Tools</a> -->
+            </div>
+        </nav>
+
+        <!-- HERO / ABOUT -->
+        <section id="about" class="hero">
             <h1>Julian Rosenberger</h1>
             <div class="subtitle">PhD Researcher in Interpretable Machine Learning & HCI</div>
             
-            <div class="contact-bar">
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:julian.rsbgr@gmail.com">julian.rsbgr@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <a href="https://linkedin.com/in/julianrosenberger">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-github"></i>
-                    <a href="https://github.com/julianrosenberger">GitHub</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-graduation-cap"></i>
-                    <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en">Google Scholar</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Germany</span>
-                </div>
-            </div>
-        </header>
+            <p class="intro-text">
+                I am a PhD researcher at the <strong>University of Regensburg</strong> and <strong>TU Dresden</strong>, bridging the gap between technical AI capabilities and human understanding. 
+                <br><br>
+                My work focuses on <strong>Interpretable Machine Learning (IML)</strong> and <strong>Human-Computer Interaction (HCI)</strong>. I combine computational benchmarking with cognitive user studies to build transparent, trustworthy systems for high-stakes domains like healthcare and HR.
+            </p>
 
-        <!-- PROFILE -->
-        <div class="grid-section">
-            <div class="section-label">About</div>
-            <div class="entry-desc">
-                <strong>Bridging technical AI capabilities and human understanding.</strong><br>
-                PhD Researcher specializing in the intersection of Machine Learning (Interpretable AI) and HCI. Expert in conducting mixed-methods research, combining computational benchmarking with cognitive user studies, to build transparent, trustworthy systems for high-stakes domains like healthcare.
+            <div class="social-links">
+                <a href="mailto:julian.rsbgr@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/julianrosenberger" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/julianrosenberger" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
             </div>
-        </div>
+        </section>
 
         <!-- RESEARCH FOCUS -->
-        <div class="grid-section">
-            <div class="section-label">Focus Areas</div>
-            <div>
+        <section id="research">
+            <h2>Focus Areas</h2>
+            <div class="tag-cloud">
+                <span class="tag">Interpretable ML</span>
+                <span class="tag">Explainable AI (XAI)</span>
+                <span class="tag">Human-AI Interaction</span>
+                <span class="tag">Generalized Additive Models (GAMs)</span>
+                <span class="tag">NLP</span>
+                <span class="tag">User Experiments</span>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS (Selected) -->
+        <section id="publications">
+            <h2>Selected Publications</h2>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <a href="https://www.researchgate.net/publication/392519056_Navigating_the_Rashomon_Effect_How_Personalization_Can_Help_Adjust_Interpretable_Machine_Learning_Models_to_Individual_Users" class="entry-title">Navigating the Rashomon Effect</a>
+                    <span class="entry-meta">ECIS 2025</span>
+                </div>
                 <div class="entry-desc">
-                    <strong>Core:</strong> Interpretable ML (IML), Explainable AI (XAI), Human-AI Interaction<br>
-                    <strong>Methods:</strong> Generalized Additive Models (GAMs), User Experiments, Statistical Analysis, NLP
-                </div>
-                <div class="focus-tags">
-                    <span class="tag">Machine Learning</span>
-                    <span class="tag">HCI</span>
-                    <span class="tag">Quantitative Analysis</span>
-                    <span class="tag">User Studies</span>
+                    Designed adaptive interfaces that tailor interpretable model explanations to individual user cognitive styles to resolve model multiplicity.
                 </div>
             </div>
-        </div>
 
-        <!-- RESEARCH EXPERIENCE -->
-        <div class="grid-section">
-            <div class="section-label">Research Experience</div>
-            <div>
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">PhD Researcher</span>
-                        <span class="entry-meta">Sept 2022 – Present</span>
-                    </div>
-                    <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
-                    <div class="entry-desc">
-                        <ul>
-                            <li><strong>Cognitive Studies:</strong> Spearheading experiments (N=200+) to quantify the cognitive load of visual model outputs (GAM shape plots), directly informing interface design for non-expert users.</li>
-                            <li><strong>Technical Implementation:</strong> Implementing interpretable architectures using <strong>PyTorch</strong> and <strong>statsmodels</strong>; developing custom React/Python web interfaces for behavioral data capture.</li>
-                            <li><strong>Clinical Validation:</strong> Collaborating with medical professionals to validate ML models on <strong>MIMIC-III/IV</strong> datasets, ensuring algorithmic output aligns with domain knowledge.</li>
-                        </ul>
-                    </div>
+            <div class="entry">
+                <div class="entry-header">
+                    <a href="https://doi.org/10.24251/HICSS.2025.170" class="entry-title">Quantifying Visual Properties of GAM Shape Plots</a>
+                    <span class="entry-meta">HICSS 2025</span>
                 </div>
-
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">Research Assistant</span>
-                        <span class="entry-meta">Mar 2021 – Aug 2022</span>
-                    </div>
-                    <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                    <div class="entry-desc">
-                        Supported research in Computer Vision and NLP. Tutored "Introduction to Computer Science" (based on Harvard's CS50) for undergraduate students.
-                    </div>
+                <div class="entry-desc">
+                    Developed objective metrics to predict the cognitive load of visual AI explanations, establishing a framework for measuring interpretability.
                 </div>
             </div>
-        </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Understanding Data-Sharing with AI Systems</span>
+                    <span class="entry-meta">PAJAIS (2026, Conditionally Accepted)</span>
+                </div>
+                <div class="entry-desc">
+                    Investigated dual-process dynamics in AI interactions; found that transparency's effectiveness in fostering data-sharing is contingent on pre-existing trust.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <a href="https://doi.org/10.1016/j.eswa.2025.127043" class="entry-title">CareerBERT: Matching Resumes to Jobs</a>
+                    <span class="entry-meta">Expert Systems with Applications (2025)</span>
+                </div>
+                <div class="entry-desc">
+                    Architected a BERT-based recommender system for high-stakes HR domains; addressed fairness and transparency challenges in deploying LLMs.
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank" style="font-size: 14px; font-weight: 500; color: var(--link-hover);">View Full Publication List on Google Scholar →</a>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <h2>Research & Industry Experience</h2>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">PhD Researcher</span>
+                    <span class="entry-meta">Sept 2022 – Present</span>
+                </div>
+                <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
+                <div class="entry-desc">
+                    <ul>
+                        <li><strong>Cognitive Studies:</strong> Spearheading experiments (N=200+) to quantify cognitive load of visual model outputs (GAMs).</li>
+                        <li><strong>Technical Implementation:</strong> Implementing interpretable architectures using <strong>PyTorch</strong> and <strong>statsmodels</strong>.</li>
+                        <li><strong>Clinical Validation:</strong> Validating ML models on <strong>MIMIC-III/IV</strong> datasets with medical professionals.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Research Assistant</span>
+                    <span class="entry-meta">2021 – 2022</span>
+                </div>
+                <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
+                <div class="entry-desc">
+                    Supported Computer Vision and NLP research. Tutored "Introduction to Computer Science" based on Harvard's CS50 curriculum.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Working Student: Product Design</span>
+                    <span class="entry-meta">2020 – 2021</span>
+                </div>
+                <span class="entry-subtitle">Allianz Technology SE</span>
+                <div class="entry-desc">
+                    Conducted UX research and evaluated design tools (migration to Figma) for frontend workflows.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Technical Sales Manager</span>
+                    <span class="entry-meta">2018 – 2020</span>
+                </div>
+                <span class="entry-subtitle">Hufschmied Zerspanungssysteme</span>
+                <div class="entry-desc">
+                    Managed technical sales territories in Austria/Bavaria.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Dual Student: Insurance & Consulting</span>
+                    <span class="entry-meta">2015 – 2018</span>
+                </div>
+                <span class="entry-subtitle">Allianz Beratungs- und Vertriebs-AG</span>
+                <div class="entry-desc">
+                    Integrated practical training in customer consulting and acquisition alongside academic studies.
+                </div>
+            </div>
+        </section>
 
         <!-- EDUCATION -->
-        <div class="grid-section">
-            <div class="section-label">Education</div>
-            <div>
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">PhD in Information Systems</span>
-                        <span class="entry-meta">Exp. 2026</span>
-                    </div>
-                    <span class="entry-subtitle">University of Regensburg / TU Dresden</span>
-                    <div class="entry-desc">
-                        <strong>Thesis:</strong> "The Role of Interpretability in User-AI Interaction".<br>
-                        Nominated and selected for the <strong>ECIS 2025 Doctoral Consortium</strong>.
-                    </div>
+        <section id="education">
+            <h2>Education</h2>
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">PhD in Information Systems</span>
+                    <span class="entry-meta">Exp. 2026</span>
                 </div>
-
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">M.Sc. International Information Systems</span>
-                        <span class="entry-meta">Oct 2020 - Mar 2023</span>
-                    </div>
-                    <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                    <div class="entry-desc">
-                        Grade: 1.2 (Distinction). Top 3% of Class. Specialization in AI & HCI.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PUBLICATIONS -->
-        <div class="grid-section">
-            <div class="section-label">Selected Papers</div>
-            <div>
-                <!-- Paper 1: ECIS 2025 (Personalization) -->
-                <div class="entry">
-                    <div class="entry-header">
-                        <a href="https://www.researchgate.net/publication/392519056_Navigating_the_Rashomon_Effect_How_Personalization_Can_Help_Adjust_Interpretable_Machine_Learning_Models_to_Individual_Users" class="pub-link entry-title">Navigating the Rashomon Effect</a>
-                        <span class="entry-meta">ECIS 2025</span>
-                    </div>
-                    <div class="entry-desc">
-                        Designed adaptive interfaces that tailor interpretable model explanations to individual user cognitive styles to resolve model multiplicity.
-                    </div>
-                </div>
-
-                <!-- Paper 2: HICSS 2025 (Measurement/Cognitive) -->
-                <div class="entry">
-                    <div class="entry-header">
-                        <a href="https://doi.org/10.24251/HICSS.2025.170" class="pub-link entry-title">Quantifying Visual Properties of GAM Shape Plots</a>
-                        <span class="entry-meta">HICSS 2025</span>
-                    </div>
-                    <div class="entry-desc">
-                        Developed objective metrics to predict the cognitive load of visual AI explanations, establishing a framework for measuring interpretability.
-                    </div>
-                </div>
-
-                <!-- Paper 3: PAJAIS (Trust/Behavior) -->
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">Understanding Data-Sharing with AI Systems</span>
-                        <span class="entry-meta">Pacific Asia Journal of the AIS (2026, Accepted)</span>
-                    </div>
-                    <div class="entry-desc">
-                        Investigated dual-process dynamics in AI interactions; found that transparency's effectiveness in fostering data-sharing is contingent on pre-existing trust.
-                    </div>
-                </div>
-
-                <!-- Paper 4: CareerBERT (Engineering/Applied NLP) -->
-                <div class="entry">
-                    <div class="entry-header">
-                        <a href="https://doi.org/10.1016/j.eswa.2025.127043" class="pub-link entry-title">CareerBERT: Matching Resumes to Jobs</a>
-                        <span class="entry-meta">Expert Systems with Applications (2024)</span>
-                    </div>
-                    <div class="entry-desc">
-                        Architected a BERT-based recommender system for high-stakes HR domains; addressed fairness and transparency challenges in deploying LLMs.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- INDUSTRY EXPERIENCE -->
-        <div class="grid-section">
-            <div class="section-label">Industry Experience</div>
-            <div>
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">Working Student: Product Design</span>
-                        <span class="entry-meta">Dec 2020 – Apr 2021</span>
-                    </div>
-                    <span class="entry-subtitle">Allianz Technology SE, Munich</span>
-                    <div class="entry-desc">
-                        Conducted UX research and evaluated design tools (migration to Figma) to optimize frontend workflows. Collaborated with developers on SPA components.
-                    </div>
-                </div>
-
-                <div class="entry">
-                    <div class="entry-header">
-                        <span class="entry-title">Technical Sales Manager</span>
-                        <span class="entry-meta">Oct 2018 – Feb 2020</span>
-                    </div>
-                    <span class="entry-subtitle">Hufschmied Zerspanungssysteme, Bobingen</span>
-                    <div class="entry-desc">
-                        Managed technical sales territories in Austria/Bavaria. Translated customer technical requirements into product solutions.
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SKILLS & SERVICE -->
-        <div class="grid-section">
-            <div class="section-label">Skills & Service</div>
-            <div>
+                <span class="entry-subtitle">University of Regensburg / TU Dresden</span>
                 <div class="entry-desc">
-                    <strong>Languages:</strong> Python (Advanced), R, SQL, HTML/CSS<br>
-                    <strong>ML Frameworks:</strong> PyTorch, TensorFlow, Hugging Face, Scikit-learn, Pandas<br>
-                    <strong>Tools:</strong> Git, LaTeX, Figma, IBM SPSS<br>
-                    <strong>Languages:</strong> German (Native), English (Fluent - TOEFL 106)
-                </div>
-                <div style="margin-top: 12px;" class="entry-desc">
-                    <strong>Academic Service:</strong> Reviewer for ECIS 2024, 2025, 2026; WI 2024, 2025.
+                    Thesis: "The Role of Interpretability in User-AI Interaction". Nominated for <strong>ECIS 2025 Doctoral Consortium</strong>.
                 </div>
             </div>
-        </div>
 
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">M.Sc. International Information Systems</span>
+                    <span class="entry-meta">2023</span>
+                </div>
+                <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
+                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of Class.</div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">B.A. Economics (Insurance)</span>
+                    <span class="entry-meta">2018</span>
+                </div>
+                <span class="entry-subtitle">DHBW Mannheim (Dual Study w/ Allianz)</span>
+                <div class="entry-desc">Grade: 1.6. Bachelor Thesis on AI Acceptance.</div>
+            </div>
+        </section>
+
+        <footer>
+            <div>&copy; 2026 Julian Rosenberger</div>
+            <div>
+                Built with <i class="fa-solid fa-code"></i> and coffee.
+            </div>
+        </footer>
     </div>
 
 </body>

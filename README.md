@@ -1,5 +1,26 @@
-# Julian Rosenberger
+Julian Rosenberger - Personal Website
+=====================================
 
-This is my website. Currently under construction.
+This repository hosts the source code for my personal academic website.
 
-![Bewerbung_J_2](https://user-images.githubusercontent.com/73983419/152534859-3da3bfa4-d4e9-4d82-b958-7364cfd62167.jpg)
+🔗 **Live Site:** [julianrosenberger.github.io](https://www.google.com/search?q=https://julianrosenberger.github.io "null")
+
+### Overview
+
+This site serves as a digital portfolio for my research in **Interpretable Machine Learning (IML)** and **Human-Computer Interaction (HCI)**. It includes:
+
+-   **Profile & Bio:** Overview of my research focus.
+
+-   **Selected Publications:** Key papers with links to PDFs/DOIs.
+
+-   **CV:** Research and industry experience timeline.
+
+### Tech Stack
+
+-   **HTML5 / CSS3:** Built with a clean, responsive single-page layout.
+
+-   **Google Fonts:** Using 'Inter' for typography.
+
+-   **FontAwesome:** For social and UI icons.
+
+-   **GitHub Pages:** Hosted directly from this repository.
