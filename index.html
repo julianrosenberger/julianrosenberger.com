@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julian Rosenberger - PhD Researcher</title>
+    <meta name="description" content="PhD Researcher investigating why explainable AI fails to improve human decisions, and how to fix it.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-color: #fafafa; /* Softer background */
+            --bg-color: #fafafa;
             --container-bg: #ffffff;
             --text-main: #1a1a1a;
             --text-secondary: #4a4a4a;
@@ -21,6 +22,7 @@
             --link-color: #1a1a1a;
             --link-hover: #0056b3;
             --tag-bg: #f3f3f3;
+            --video-bg: #f8f8f8;
         }
 
         * {
@@ -34,16 +36,15 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            font-size: 15px; /* Slightly larger for web readability */
+            font-size: 15px;
             display: flex;
             justify-content: center;
             padding: 60px 20px;
         }
 
-        /* Responsive Container */
         .container {
             width: 100%;
-            max-width: 800px; /* Optimal reading width for a personal site */
+            max-width: 800px;
             background: var(--container-bg);
             padding: 60px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.04);
@@ -104,7 +105,12 @@
             font-size: 16px;
             color: var(--text-secondary);
             margin-bottom: 30px;
-            max-width: 650px;
+            max-width: 680px;
+            line-height: 1.7;
+        }
+
+        .intro-text strong {
+            color: var(--text-main);
         }
 
         /* Contact Icons */
@@ -150,6 +156,7 @@
             justify-content: space-between;
             align-items: baseline;
             margin-bottom: 4px;
+            gap: 12px;
         }
 
         .entry-title {
@@ -157,6 +164,11 @@
             font-size: 16px;
             color: var(--text-main);
             text-decoration: none;
+            flex: 1;
+        }
+
+        a.entry-title {
+            transition: color 0.2s;
         }
 
         a.entry-title:hover {
@@ -168,6 +180,7 @@
             font-size: 14px;
             color: var(--text-muted);
             font-variant-numeric: tabular-nums;
+            white-space: nowrap;
         }
 
         .entry-subtitle {
@@ -181,6 +194,7 @@
         .entry-desc {
             font-size: 14.5px;
             color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         .entry-desc ul {
@@ -206,6 +220,54 @@
             border-radius: 6px;
             font-size: 13px;
             font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .tag:hover {
+            background: #e8e8e8;
+        }
+
+        /* --- VIDEO EMBED --- */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            margin-top: 16px;
+            border-radius: 8px;
+            background: var(--video-bg);
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        /* --- LINKS --- */
+        .external-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--link-hover);
+            text-decoration: none;
+            transition: gap 0.2s;
+        }
+
+        .external-link:hover {
+            gap: 8px;
+        }
+
+        .external-link i {
+            font-size: 12px;
         }
 
         /* --- FOOTER --- */
@@ -221,9 +283,50 @@
 
         /* Mobile Adjustments */
         @media (max-width: 600px) {
-            .container { padding: 30px 20px; }
-            .entry-header { flex-direction: column; }
-            .entry-meta { margin-top: 2px; }
+            body {
+                padding: 30px 15px;
+            }
+            
+            .container { 
+                padding: 30px 20px; 
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .entry-header { 
+                flex-direction: column; 
+                align-items: flex-start;
+            }
+            
+            .entry-meta { 
+                margin-top: 2px; 
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+            
+            .nav-links {
+                display: flex;
+                gap: 16px;
+            }
+            
+            .nav-links a {
+                margin-left: 0;
+            }
+            
+            footer {
+                flex-direction: column;
+                gap: 8px;
+            }
         }
     </style>
 </head>
@@ -245,8 +348,9 @@
             <div class="subtitle">PhD Researcher in Human-AI Decision-Making</div>
             
             <p class="intro-text">
-                <strong>Investigating why explainable AI often fails to improve human decisions, and how to fix it.</strong><br>
-                Despite advances in XAI, challenges like automation bias, over-reliance, and mistrust persist. I combine large-scale behavioral experiments (N=200+) with technical ML implementation to understand these failures and design AI systems that align with human cognition and foster appropriate reliance.
+                <strong>Investigating why explainable AI often fails to improve human decisions, and how to fix it.</strong><br><br>
+                Despite advances in XAI, challenges like automation bias, over-reliance, and mistrust persist. I combine large-scale behavioral experiments (N=200+) with technical ML implementation to understand these failures and design AI systems that genuinely align with human cognition and foster appropriate reliance.
+            </p>
 
             <div class="social-links">
                 <a href="mailto:julian.rsbgr@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
@@ -281,7 +385,7 @@
                     <span class="entry-meta">ECIS 2025</span>
                 </div>
                 <div class="entry-desc">
-                    Designed adaptive interfaces that tailor interpretable model explanations to individual user cognitive styles to resolve model multiplicity.
+                    Designed adaptive interfaces that tailor interpretable model explanations to individual user cognitive styles, resolving model multiplicity challenges in human-AI interaction.
                 </div>
             </div>
 
@@ -291,7 +395,7 @@
                     <span class="entry-meta">HICSS 2025</span>
                 </div>
                 <div class="entry-desc">
-                    Developed objective metrics to predict the cognitive load of visual AI explanations, establishing a framework for measuring interpretability.
+                    Developed objective metrics to predict the cognitive load of visual AI explanations, establishing a quantitative framework for measuring interpretability.
                 </div>
             </div>
 
@@ -301,32 +405,64 @@
                     <span class="entry-meta">PAJAIS (In Press)</span>
                 </div>
                 <div class="entry-desc">
-                    Investigated dual-process dynamics in AI interactions; found that transparency's effectiveness in fostering data-sharing is contingent on pre-existing trust.
+                    Investigated dual-process dynamics in AI interactions; found that transparency's effectiveness in fostering data-sharing is contingent on pre-existing trust levels.
                 </div>
             </div>
 
             <div class="entry">
                 <div class="entry-header">
                     <a href="https://doi.org/10.1007/s10479-024-06226-8" class="entry-title">Leveraging Interpretable ML in Intensive Care</a>
-                    <span class="entry-meta">Annals of Operations Research (2024)</span>
+                    <span class="entry-meta">Ann. Oper. Res. (2024)</span>
                 </div>
                 <div class="entry-desc">
-                    GAMs match black-box performance with <15 features in ICU prediction; validated with medical experts on MIMIC-III.
+                    Demonstrated that GAMs match black-box performance with <15 features in ICU prediction; validated approach with medical experts using MIMIC-III data.
                 </div>
             </div>
 
             <div class="entry">
                 <div class="entry-header">
                     <a href="https://doi.org/10.1016/j.eswa.2025.127043" class="entry-title">CareerBERT: Matching Resumes to Jobs</a>
-                    <span class="entry-meta">Expert Systems with Applications (2025)</span>
+                    <span class="entry-meta">Expert Syst. Appl. (2025)</span>
                 </div>
                 <div class="entry-desc">
-                    Co-architected a BERT-based recommender system for high-stakes HR domains; addressed fairness and transparency challenges in deploying LLMs.
+                    Co-architected a BERT-based recommender system for high-stakes HR decisions; addressed fairness and transparency challenges in deploying LLMs for recruitment.
                 </div>
             </div>
             
             <div style="margin-top: 20px;">
-                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank" style="font-size: 14px; font-weight: 500; color: var(--link-hover);">View Full Publication List on Google Scholar →</a>
+                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank" class="external-link">
+                    View Full Publication List on Google Scholar <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- TALKS -->
+        <section id="talks">
+            <h2>Selected Talks</h2>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Beyond Ad Matching: Using CareerBERT to Map Resumes to ESCO Job Categories</span>
+                    <span class="entry-meta">May 2025</span>
+                </div>
+                <span class="entry-subtitle">9th OJA Forum · Bertelsmann Stiftung</span>
+                <div class="entry-desc">
+                    Presented CareerBERT's approach to semantic job matching using BERT embeddings and the ESCO taxonomy. Demonstrated how AI can move beyond traditional ad-matching to map unstructured resume data to standardized job categories, with evaluation results from both quantitative metrics and HR expert feedback. Session: "Curricular and Candidate Alignment with Job Market Demand"
+                    
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/mTh9qha7oCc?si=YOUR_EMBED_ID" 
+                                title="CareerBERT Talk at OJA Forum" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                    <div style="margin-top: 12px;">
+                        <a href="https://www.youtube.com/watch?v=mTh9qha7oCc&t=1s" target="_blank" class="external-link">
+                            <i class="fa-brands fa-youtube"></i> Watch on YouTube (German) <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -336,15 +472,15 @@
 
             <div class="entry">
                 <div class="entry-header">
-                    <span class="entry-title">PhD Researcher (supervised by Prof. Mathias Kraus & Prof. Patrick Zschech)</span>
+                    <span class="entry-title">PhD Researcher</span>
                     <span class="entry-meta">Sept 2022 – Present</span>
                 </div>
-                <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
+                <span class="entry-subtitle">University of Regensburg & TU Dresden · Supervised by Prof. Mathias Kraus & Prof. Patrick Zschech</span>
                 <div class="entry-desc">
                     <ul>
-                        <li><strong>Experimental Research:</strong> Designed and ran large-scale online experiments with behavioral data capture; built custom React/Python platforms for user studies.</li>
-                        <li><strong>Technical Implementation:</strong> Developed interpretable ML architectures (GAMs, IGANN); statistical modeling and analysis pipelines.</li>
-                        <li><strong>Clinical Collaboration:</strong> Worked with ICU physicians to validate model outputs against domain expertise.</li>
+                        <li><strong>Experimental Research:</strong> Designed and conducted large-scale online experiments with behavioral data capture; built custom React/Python platforms for user studies.</li>
+                        <li><strong>Technical Implementation:</strong> Developed interpretable ML architectures (GAMs, IGANN); implemented statistical modeling and analysis pipelines.</li>
+                        <li><strong>Clinical Collaboration:</strong> Partnered with ICU physicians to validate model outputs against domain expertise in high-stakes medical contexts.</li>
                     </ul>
                 </div>
             </div>
@@ -356,7 +492,7 @@
                 </div>
                 <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
                 <div class="entry-desc">
-                    Supported research in Computer Vision and NLP. Tutored "Introduction to Computer Science" based on Harvard's CS50 curriculum.
+                    Supported research projects in Computer Vision and Natural Language Processing. Tutored "Introduction to Computer Science" based on Harvard's CS50 curriculum.
                 </div>
             </div>
 
@@ -367,7 +503,7 @@
                 </div>
                 <span class="entry-subtitle">Allianz Technology SE, Munich</span>
                 <div class="entry-desc">
-                    Conducted UX research and evaluated design tools (migration to Figma) for frontend workflows.
+                    Conducted UX research and evaluated design tools for frontend workflows; contributed to company-wide migration to Figma.
                 </div>
             </div>
 
@@ -378,7 +514,7 @@
                 </div>
                 <span class="entry-subtitle">Hufschmied Zerspanungssysteme, Bobingen</span>
                 <div class="entry-desc">
-                    Managed technical sales territories in Austria/Bavaria.
+                    Managed technical sales territories in Austria and Bavaria for precision cutting tools.
                 </div>
             </div>
 
@@ -389,7 +525,7 @@
                 </div>
                 <span class="entry-subtitle">Allianz Beratungs- und Vertriebs-AG, Nuremberg</span>
                 <div class="entry-desc">
-                    Consulting and acquisition of customers. Participation in personnel projects.
+                    Customer consulting and acquisition. Participated in strategic personnel development projects.
                 </div>
             </div>
         </section>
@@ -404,7 +540,7 @@
                 </div>
                 <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
                 <div class="entry-desc">
-                    Thesis: "The Role of Interpretability in User-AI Interaction". Nominated for <strong>ECIS 2025 Doctoral Consortium</strong>.
+                    Thesis: "The Role of Interpretability in User-AI Interaction." Nominated for <strong>ECIS 2025 Doctoral Consortium</strong>.
                 </div>
             </div>
 
@@ -414,7 +550,7 @@
                     <span class="entry-meta">2023</span>
                 </div>
                 <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of Class. Specialization in AI & HCI.</div>
+                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of cohort. Specialization in AI & Human-Computer Interaction.</div>
             </div>
 
             <div class="entry">
@@ -422,7 +558,7 @@
                     <span class="entry-title">B.A. Economics (Insurance)</span>
                     <span class="entry-meta">2018</span>
                 </div>
-                <span class="entry-subtitle">DHBW Mannheim (Dual Study w/ Allianz)</span>
+                <span class="entry-subtitle">DHBW Mannheim (Dual Study with Allianz)</span>
                 <div class="entry-desc">Grade: 1.6.</div>
             </div>
         </section>
@@ -432,20 +568,20 @@
             <h2>Skills & Service</h2>
             <div class="entry-desc">
                 <strong>Programming:</strong> Python, R, JavaScript/React<br>
-                <strong>ML Frameworks:</strong> PyTorch, Statsmodels, HuggingFace<br>
+                <strong>ML Frameworks:</strong> PyTorch, Statsmodels, HuggingFace Transformers<br>
                 <strong>Tools:</strong> Git, LaTeX, Figma, IBM SPSS<br>
-                <strong>Languages:</strong> German (Native), English (Fluent - TOEFL 106)
+                <strong>Languages:</strong> German (Native), English (Fluent · TOEFL 106)
             </div>
-            <div style="margin-top: 12px;" class="entry-desc">
-                <strong>Service:</strong> Reviewer for ECIS, WI, Data Technologies and Applications.<br>
-                <strong>Teaching:</strong> Master's Seminars on Explainable AI and Scientific Writing.
+            <div style="margin-top: 16px;" class="entry-desc">
+                <strong>Service:</strong> Reviewer for ECIS, WI, Data Technologies and Applications<br>
+                <strong>Teaching:</strong> Master's seminars on Explainable AI and Scientific Writing
             </div>
         </section>
 
         <footer>
             <div>&copy; 2026 Julian Rosenberger</div>
             <div>
-                Built with <i class="fa-solid fa-code"></i> and coffee.
+                Built with <i class="fa-solid fa-code"></i> and coffee
             </div>
         </footer>
     </div>
