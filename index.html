@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Julian Rosenberger - PhD Researcher</title>
-    <meta name="description" content="PhD Researcher investigating why explainable AI fails to improve human decisions, and how to fix it.">
+    <meta name="description" content="PhD Researcher empirically validating interpretable ML systems through behavioral experiments and domain expert collaboration.">
     <link rel="icon" type="image/svg+xml" href="Favicon_JR.svg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -271,6 +271,18 @@
             font-size: 12px;
         }
 
+        /* Award Badge */
+        .award-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+
         /* --- FOOTER --- */
         footer {
             margin-top: 80px;
@@ -346,18 +358,17 @@
         <!-- HERO / ABOUT -->
         <section id="about" class="hero">
             <h1>Julian Rosenberger</h1>
-            <div class="subtitle">PhD Researcher in Human-AI Decision-Making</div>
+            <div class="subtitle">PhD Researcher | Interpretable ML & Human-AI Collaboration</div>
             
             <p class="intro-text">
-                <strong>Investigating why explainable AI often fails to improve human decisions, and how to fix it.</strong><br><br>
-                Despite advances in XAI, challenges like automation bias, over-reliance, and mistrust persist. I combine large-scale behavioral experiments (N=200+) with technical ML implementation to understand these failures and design AI systems that genuinely align with human cognition and foster appropriate reliance.
+                I empirically validate interpretable ML systems through rigorous behavioral experiments and domain expert collaboration. Using pre-registered studies (N>250) and inferential statistics, I test which properties of transparent systems actually drive user understanding and adoption. <strong>My work challenges common assumptions about interpretability, revealing that adjustability and personalization often matter more than static transparency alone.</strong>
             </p>
 
             <div class="social-links">
-                <a href="mailto:julian.rsbgr@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="mailto:julian.rosenberger@ur.de" title="Email"><i class="fa-solid fa-envelope"></i></a>
                 <a href="https://linkedin.com/in/julianrosenberger" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                <a href="https://www.researchgate.net/profile/Julian-Rosenberger?ev=hdr_xprf"><i class="fa-brands fa-researchgate"></i></a>
+                <a href="https://www.researchgate.net/profile/Julian-Rosenberger?ev=hdr_xprf" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
                 <a href="https://github.com/julianrosenberger" title="GitHub"><i class="fa-brands fa-github"></i></a>
             </div>
         </section>
@@ -366,20 +377,21 @@
         <section id="research">
             <h2>Focus Areas</h2>
             <div class="tag-cloud">
-                <span class="tag">Human-AI Decision-Making</span>
-                <span class="tag">Cognitive Processing of AI</span>
-                <span class="tag">Appropriate Reliance</span>
-                <span class="tag">Trust Calibration</span>
+                <span class="tag">Interpretable Machine Learning</span>
+                <span class="tag">Human-AI Collaboration</span>
                 <span class="tag">Behavioral Experiments</span>
-                <span class="tag">Cognitive Load Measurement</span>
-                <span class="tag">Dual-Process Theory</span>
+                <span class="tag">Pre-registered Studies</span>
+                <span class="tag">Conversational XAI</span>
+                <span class="tag">Trust Calibration</span>
+                <span class="tag">Cognitive Load</span>
                 <span class="tag">GAMs</span>
+                <span class="tag">LLMs</span>
             </div>
         </section>
 
         <!-- PUBLICATIONS (Selected) -->
         <section id="publications">
-            <h2>Selected Papers</h2>
+            <h2>Selected Papers <span style="font-weight: 400; font-size: 13px; text-transform: none; letter-spacing: normal;">(9 total)</span></h2>
             
             <div class="entry">
                 <div class="entry-header">
@@ -387,7 +399,7 @@
                     <span class="entry-meta">ECIS 2025</span>
                 </div>
                 <div class="entry-desc">
-                    Designed adaptive interfaces that tailor interpretable model explanations to individual user cognitive styles, resolving model multiplicity challenges in human-AI interaction.
+                    Developed adaptive interpretable ML framework using Contextual Bandits to leverage the Rashomon Effect, demonstrating that users develop distinct individual preferences for model complexity while maintaining predictive accuracy and interpretability.
                 </div>
             </div>
 
@@ -397,7 +409,7 @@
                     <span class="entry-meta">HICSS 2025</span>
                 </div>
                 <div class="entry-desc">
-                    Developed objective metrics to predict the cognitive load of visual AI explanations, establishing a quantitative framework for measuring interpretability.
+                    Established objective computational metrics (e.g., "visual chunks," number of kinks) that predict 86% of variance in users' cognitive load when interpreting ML explanations, enabling interpretability assessment without subjective user testing.
                 </div>
             </div>
 
@@ -407,7 +419,7 @@
                     <span class="entry-meta">PAJAIS (In Press)</span>
                 </div>
                 <div class="entry-desc">
-                    Investigated dual-process dynamics in AI interactions; found that transparency's effectiveness in fostering data-sharing is contingent on pre-existing trust levels.
+                    Revealed through pre-registered experiment (N=240) that AI transparency alone does not increase data-sharing, but amplifies willingness to share when users already trust AI, challenging assumptions that transparency universally promotes adoption.
                 </div>
             </div>
 
@@ -417,7 +429,7 @@
                     <span class="entry-meta">Ann. Oper. Res. (2024)</span>
                 </div>
                 <div class="entry-desc">
-                    Demonstrated that GAMs match black-box performance with <15 features in ICU prediction; validated approach with medical experts using MIMIC-III data.
+                    Reduced ICU prediction features by 97% while maintaining performance, demonstrating interpretable GAMs achieve parity with XGBoost, validated by physicians and challenging assumptions about the performance-interpretability tradeoff.
                 </div>
             </div>
 
@@ -427,7 +439,7 @@
                     <span class="entry-meta">Expert Syst. Appl. (2025)</span>
                 </div>
                 <div class="entry-desc">
-                    Co-architected a BERT-based recommender system for high-stakes HR decisions; addressed fairness and transparency challenges in deploying LLMs for recruitment.
+                    Built domain-adapted SBERT for job recommendation using ESCO taxonomy to mitigate hiring bias, validated by HR experts with strong performance (MAP@20: 0.71) across white-collar, blue-collar, and atypical career paths.
                 </div>
             </div>
             
@@ -435,6 +447,31 @@
                 <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank" class="external-link">
                     View Full Publication List on Google Scholar <i class="fa-solid fa-arrow-right"></i>
                 </a>
+            </div>
+        </section>
+
+        <!-- CURRENT WORK -->
+        <section id="current">
+            <h2>Current Work</h2>
+            
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Conversational XAI Interfaces</span>
+                    <span class="entry-meta">Ongoing</span>
+                </div>
+                <div class="entry-desc">
+                    Developing LLM-powered conversational interfaces that enable users to interactively query model explanations rather than passively consuming static visualizations, addressing scalability challenges in interpretable AI deployment.
+                </div>
+            </div>
+
+            <div class="entry">
+                <div class="entry-header">
+                    <span class="entry-title">Enterprise Job Matching System</span>
+                    <span class="entry-meta">Ongoing</span>
+                </div>
+                <div class="entry-desc">
+                    Collaborating with Continental AG on enterprise-scale job matching system deployment, bridging research insights with production constraints and learning how interpretability requirements differ between research and industry contexts.
+                </div>
             </div>
         </section>
 
@@ -449,7 +486,7 @@
                 </div>
                 <span class="entry-subtitle">9th OJA Forum · Bertelsmann Stiftung</span>
                 <div class="entry-desc">
-                    Presented CareerBERT's approach to semantic job matching using BERT embeddings and the ESCO taxonomy. Demonstrated how AI can move beyond traditional ad-matching to map unstructured resume data to standardized job categories, with evaluation results from both quantitative metrics and HR expert feedback. Session: "Curricular and Candidate Alignment with Job Market Demand"
+                    Presented CareerBERT's approach to semantic job matching using BERT embeddings and the ESCO taxonomy. Demonstrated how AI can move beyond traditional ad-matching to map unstructured resume data to standardized job categories, with evaluation results from both quantitative metrics and HR expert feedback.
                     
                     <div class="video-container">
                         <iframe src="https://www.youtube.com/embed/mTh9qha7oCc?si=YOUR_EMBED_ID" 
@@ -470,7 +507,7 @@
 
         <!-- EXPERIENCE -->
         <section id="experience">
-            <h2>Research & Industry Experience</h2>
+            <h2>Experience</h2>
 
             <div class="entry">
                 <div class="entry-header">
@@ -480,9 +517,9 @@
                 <span class="entry-subtitle">University of Regensburg & TU Dresden · Supervised by Prof. Mathias Kraus & Prof. Patrick Zschech</span>
                 <div class="entry-desc">
                     <ul>
-                        <li><strong>Experimental Research:</strong> Designed and conducted large-scale online experiments with behavioral data capture; built custom React/Python platforms for user studies.</li>
-                        <li><strong>Technical Implementation:</strong> Developed interpretable ML architectures (GAMs, IGANN); implemented statistical modeling and analysis pipelines.</li>
-                        <li><strong>Clinical Collaboration:</strong> Partnered with ICU physicians to validate model outputs against domain expertise in high-stakes medical contexts.</li>
+                        <li><strong>Experimental Research:</strong> Designed and executed multiple pre-registered behavioral experiments (N>250) using custom React/Python platforms to test interpretability assumptions.</li>
+                        <li><strong>Technical Implementation:</strong> Implemented interpretable ML systems using GAMs, Contextual Bandits, and LLMs; currently developing conversational XAI interfaces.</li>
+                        <li><strong>Validation:</strong> Established multi-method validation combining experiments, domain expert evaluation (physicians, HR professionals), and objective metrics.</li>
                     </ul>
                 </div>
             </div>
@@ -494,55 +531,23 @@
                 </div>
                 <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
                 <div class="entry-desc">
-                    Supported research projects in Computer Vision and Natural Language Processing. Tutored "Introduction to Computer Science" based on Harvard's CS50 curriculum.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Working Student: Product Design</span>
-                    <span class="entry-meta">Dec 2020 – Apr 2021</span>
-                </div>
-                <span class="entry-subtitle">Allianz Technology SE, Munich</span>
-                <div class="entry-desc">
-                    Conducted UX research and evaluated design tools for frontend workflows; contributed to company-wide migration to Figma.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Technical Sales Manager</span>
-                    <span class="entry-meta">Oct 2018 – Feb 2020</span>
-                </div>
-                <span class="entry-subtitle">Hufschmied Zerspanungssysteme, Bobingen</span>
-                <div class="entry-desc">
-                    Managed technical sales territories in Austria and Bavaria for precision cutting tools.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Dual Student: Insurance & Consulting</span>
-                    <span class="entry-meta">Oct 2015 – Sept 2018</span>
-                </div>
-                <span class="entry-subtitle">Allianz Beratungs- und Vertriebs-AG, Nuremberg</span>
-                <div class="entry-desc">
-                    Customer consulting and acquisition. Participated in strategic personnel development projects.
+                    Contributed to Computer Vision and NLP research pipelines; served as Teaching Assistant for "Introduction to Computer Science" (Harvard CS50 curriculum) supporting 80+ students.
                 </div>
             </div>
         </section>
 
         <!-- EDUCATION -->
         <section id="education">
-            <h2>Education</h2>
+            <h2>Education & Awards</h2>
             <div class="entry">
                 <div class="entry-header">
                     <span class="entry-title">PhD in Information Systems</span>
-                    <span class="entry-meta">Exp. 2026</span>
+                    <span class="entry-meta">Exp. Oct 2026</span>
                 </div>
                 <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
                 <div class="entry-desc">
-                    Thesis: "The Role of Interpretability in User-AI Interaction." Nominated for <strong>ECIS 2025 Doctoral Consortium</strong>.
+                    Thesis: "The Role of Interpretability in Human-AI Collaboration."<br>
+                    <strong>Selected for ECIS 2025 Doctoral Consortium</strong><span class="award-badge">🏆 Best Student Paper, WI 2024</span>
                 </div>
             </div>
 
@@ -552,7 +557,7 @@
                     <span class="entry-meta">2023</span>
                 </div>
                 <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of cohort. Specialization in AI & Human-Computer Interaction.</div>
+                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of class. Specialization in AI & Human-Computer Interaction.</div>
             </div>
 
             <div class="entry">
@@ -569,14 +574,15 @@
         <section id="skills">
             <h2>Skills & Service</h2>
             <div class="entry-desc">
-                <strong>Programming:</strong> Python, R, JavaScript/React<br>
-                <strong>ML Frameworks:</strong> PyTorch, Statsmodels, HuggingFace Transformers<br>
-                <strong>Tools:</strong> Git, LaTeX, Figma, IBM SPSS<br>
+                <strong>Programming:</strong> Python (PyTorch, HuggingFace/Transformers, Scikit-learn), R (dplyr, ggplot2), SQL, JavaScript/React<br>
+                <strong>Cloud & Infrastructure:</strong> GCP (BigQuery, Compute Engine), AWS (EC2), Docker, Git/GitHub<br>
+                <strong>Data & Methods:</strong> MIMIC-III/IV, ESCO Taxonomy, Vector Embeddings, Pre-registered Experimental Design, Statistical Inference, Mixed-Effects Modeling<br>
+                <strong>Tools:</strong> LaTeX, SoSciSurvey/Prolific<br>
                 <strong>Languages:</strong> German (Native), English (Fluent · TOEFL 106)
             </div>
             <div style="margin-top: 16px;" class="entry-desc">
                 <strong>Service:</strong> Reviewer for ECIS, WI, Data Technologies and Applications<br>
-                <strong>Teaching:</strong> Master's seminars on Explainable AI and Scientific Writing
+                <strong>Teaching:</strong> Master's Seminars on Deep Learning, Explainable AI, Scientific Writing
             </div>
         </section>
 
