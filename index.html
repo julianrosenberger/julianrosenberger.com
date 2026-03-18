@@ -3,582 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Julian Rosenberger - PhD Researcher</title>
-    <meta name="description" content="PhD Researcher empirically validating interpretable ML systems through behavioral experiments and domain expert collaboration.">
-    <link rel="icon" type="image/svg+xml" href="Favicon_JR.svg">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Julian Rosenberger</title>
+    <meta name="description" content="PhD Researcher in Information Systems. Interpretable ML, human-AI collaboration, behavioral experiments.">
+    <link rel="icon" type="image/svg+xml" href="assets/favicon_jr.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --bg-color: #fafafa;
-            --container-bg: #ffffff;
-            --text-main: #1a1a1a;
-            --text-secondary: #4a4a4a;
-            --text-muted: #737373;
-            --accent-color: #000000;
-            --line-color: #eaeaea;
-            --link-color: #1a1a1a;
-            --link-hover: #0056b3;
-            --tag-bg: #f3f3f3;
-            --video-bg: #f8f8f8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            line-height: 1.6;
-            font-size: 15px;
-            display: flex;
-            justify-content: center;
-            padding: 60px 20px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 800px;
-            background: var(--container-bg);
-            padding: 60px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-            border-radius: 8px;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 60px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--line-color);
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-weight: 500;
-            margin-left: 24px;
-            font-size: 14px;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--text-main);
-        }
-
-        .nav-brand {
-            font-weight: 700;
-            font-size: 18px;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            margin-bottom: 50px;
-        }
-
-        h1 {
-            font-weight: 800;
-            font-size: 36px;
-            letter-spacing: -0.03em;
-            margin-bottom: 12px;
-            line-height: 1.2;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: var(--text-secondary);
-            font-weight: 400;
-            margin-bottom: 24px;
-        }
-
-        .intro-text {
-            font-size: 16px;
-            color: var(--text-secondary);
-            margin-bottom: 30px;
-            max-width: 680px;
-            line-height: 1.7;
-        }
-
-        /* Contact Icons */
-        .social-links {
-            display: flex;
-            gap: 16px;
-        }
-
-        .social-links a {
-            color: var(--text-main);
-            font-size: 18px;
-            transition: transform 0.2s, color 0.2s;
-        }
-
-        .social-links a:hover {
-            transform: translateY(-2px);
-            color: var(--link-hover);
-        }
-
-        /* --- SECTIONS --- */
-        section {
-            margin-bottom: 60px;
-        }
-
-        h2 {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: var(--text-muted);
-            font-weight: 700;
-            margin-bottom: 24px;
-            border-bottom: 1px solid var(--line-color);
-            padding-bottom: 8px;
-        }
-
-        /* --- ENTRIES --- */
-        .entry {
-            margin-bottom: 32px;
-        }
-
-        .entry-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-            gap: 12px;
-        }
-
-        .entry-title {
-            font-weight: 600;
-            font-size: 16px;
-            color: var(--text-main);
-            text-decoration: none;
-            flex: 1;
-        }
-
-        a.entry-title {
-            transition: color 0.2s;
-        }
-
-        a.entry-title:hover {
-            color: var(--link-hover);
-            text-decoration: underline;
-        }
-
-        .entry-meta {
-            font-size: 14px;
-            color: var(--text-muted);
-            font-variant-numeric: tabular-nums;
-            white-space: nowrap;
-        }
-
-        .entry-subtitle {
-            font-size: 14px;
-            color: var(--text-secondary);
-            display: block;
-            margin-bottom: 8px;
-            font-style: italic;
-        }
-
-        .entry-desc {
-            font-size: 14.5px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .entry-desc ul {
-            padding-left: 18px;
-            margin-top: 8px;
-        }
-        
-        .entry-desc li {
-            margin-bottom: 6px;
-        }
-
-        /* --- TAGS --- */
-        .tag-cloud {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tag {
-            background: var(--tag-bg);
-            color: var(--text-secondary);
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 500;
-            transition: background 0.2s;
-        }
-
-        .tag:hover {
-            background: #e8e8e8;
-        }
-
-        /* --- VIDEO EMBED --- */
-        .video-container {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            margin-top: 16px;
-            border-radius: 8px;
-            background: var(--video-bg);
-            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-            border-radius: 8px;
-        }
-
-        /* --- LINKS --- */
-        .external-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--link-hover);
-            text-decoration: none;
-            transition: gap 0.2s;
-        }
-
-        .external-link:hover {
-            gap: 8px;
-        }
-
-        .external-link i {
-            font-size: 12px;
-        }
-
-
-
-        /* --- FOOTER --- */
-        footer {
-            margin-top: 80px;
-            padding-top: 20px;
-            border-top: 1px solid var(--line-color);
-            font-size: 13px;
-            color: var(--text-muted);
-            display: flex;
-            justify-content: space-between;
-        }
-
-        /* Mobile Adjustments */
-        @media (max-width: 600px) {
-            body {
-                padding: 30px 15px;
-            }
-            
-            .container { 
-                padding: 30px 20px; 
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-            
-            .subtitle {
-                font-size: 16px;
-            }
-            
-            .entry-header { 
-                flex-direction: column; 
-                align-items: flex-start;
-            }
-            
-            .entry-meta { 
-                margin-top: 2px; 
-            }
-            
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 16px;
-            }
-            
-            .nav-links {
-                display: flex;
-                gap: 16px;
-            }
-            
-            .nav-links a {
-                margin-left: 0;
-            }
-            
-            footer {
-                flex-direction: column;
-                gap: 8px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <!-- NAVIGATION -->
-        <nav>
-            <a href="#" class="nav-brand">JR</a>
-            <div class="nav-links">
-                <a href="#about" class="active">About</a>
-                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank">Publications <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 10px; margin-left: 2px;"></i></a>
-            </div>
-        </nav>
-
-        <!-- HERO / ABOUT -->
-        <section id="about" class="hero">
+    <!-- HEADER -->
+    <div class="header">
+        <img src="assets/profile_rosenberger.JPG" alt="Julian Rosenberger" class="profile-photo">
+        <div class="header-info">
             <h1>Julian Rosenberger</h1>
-            <div class="subtitle">PhD Researcher | Interpretable ML & Human-AI Collaboration</div>
-            
-            <p class="intro-text">
-                I empirically validate interpretable ML systems through rigorous behavioral experiments and domain expert collaboration. Using pre-registered studies (N>250) and inferential statistics, I test which properties of transparent systems actually drive user understanding and adoption. My work challenges common assumptions about interpretability, revealing that adjustability and personalization often matter more than static transparency alone.
-            </p>
-
-            <div class="social-links">
-                <a href="mailto:julian.rosenberger@ur.de" title="Email"><i class="fa-solid fa-envelope"></i></a>
-                <a href="https://linkedin.com/in/julianrosenberger" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" title="Google Scholar"><i class="fa-solid fa-graduation-cap"></i></a>
-                <a href="https://www.researchgate.net/profile/Julian-Rosenberger?ev=hdr_xprf" title="ResearchGate"><i class="fa-brands fa-researchgate"></i></a>
-                <a href="https://github.com/julianrosenberger" title="GitHub"><i class="fa-brands fa-github"></i></a>
+            <div class="affiliation">
+                PhD Researcher in Information Systems<br>
+                University of Regensburg & TU Dresden
             </div>
-        </section>
-
-        <!-- RESEARCH FOCUS -->
-        <section id="research">
-            <h2>Focus Areas</h2>
-            <div class="tag-cloud">
-                <span class="tag">Interpretable Machine Learning</span>
-                <span class="tag">Human-AI Collaboration</span>
-                <span class="tag">Behavioral Experiments</span>
-                <span class="tag">Pre-registered Studies</span>
-                <span class="tag">Conversational XAI</span>
-                <span class="tag">Trust Calibration</span>
-                <span class="tag">Cognitive Load</span>
-                <span class="tag">GAMs</span>
-                <span class="tag">LLMs</span>
+            <div class="header-links">
+                <a href="mailto:julian.rosenberger@ur.de">Email</a>
+                <span class="sep">|</span>
+                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank">Google Scholar</a>
+                <span class="sep">|</span>
+                <a href="https://github.com/julianrosenberger" target="_blank">GitHub</a>
+                <span class="sep">|</span>
+                <a href="https://bsky.app/profile/julianrosenberger.bsky.social" target="_blank">Bluesky</a>
+                <span class="sep">|</span>
+                <a href="files/CV_Rosenberger.pdf">CV</a>
             </div>
-        </section>
-
-        <!-- PUBLICATIONS (Selected) -->
-        <section id="publications">
-            <h2>Selected Papers <span style="font-weight: 400; font-size: 13px; text-transform: none; letter-spacing: normal;">(9 total)</span></h2>
-            
-            <div class="entry">
-                <div class="entry-header">
-                    <a href="https://www.researchgate.net/publication/392519056_Navigating_the_Rashomon_Effect_How_Personalization_Can_Help_Adjust_Interpretable_Machine_Learning_Models_to_Individual_Users" class="entry-title">Navigating the Rashomon Effect</a>
-                    <span class="entry-meta">ECIS 2025</span>
-                </div>
-                <div class="entry-desc">
-                    Developed adaptive interpretable ML framework using Contextual Bandits to leverage the Rashomon Effect, demonstrating that users develop distinct individual preferences for model complexity while maintaining predictive accuracy and interpretability.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <a href="https://doi.org/10.24251/HICSS.2025.170" class="entry-title">Quantifying Visual Properties of GAM Shape Plots</a>
-                    <span class="entry-meta">HICSS 2025</span>
-                </div>
-                <div class="entry-desc">
-                    Established objective computational metrics (e.g., "visual chunks," number of kinks) that predict 86% of variance in users' cognitive load when interpreting ML explanations, enabling interpretability assessment without subjective user testing.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Understanding Data-Sharing with AI Systems</span>
-                    <span class="entry-meta">PAJAIS (In Press)</span>
-                </div>
-                <div class="entry-desc">
-                    Revealed through pre-registered experiment (N=240) that AI transparency alone does not increase data-sharing, but amplifies willingness to share when users already trust AI, challenging assumptions that transparency universally promotes adoption.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <a href="https://doi.org/10.1007/s10479-024-06226-8" class="entry-title">Leveraging Interpretable ML in Intensive Care</a>
-                    <span class="entry-meta">Ann. Oper. Res. (2024)</span>
-                </div>
-                <div class="entry-desc">
-                    Reduced ICU prediction features by 97% while maintaining performance, demonstrating interpretable GAMs achieve parity with XGBoost, validated by physicians and challenging assumptions about the performance-interpretability tradeoff.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <a href="https://doi.org/10.1016/j.eswa.2025.127043" class="entry-title">CareerBERT: Matching Resumes to Jobs</a>
-                    <span class="entry-meta">Expert Syst. Appl. (2025)</span>
-                </div>
-                <div class="entry-desc">
-                    Built domain-adapted SBERT for job recommendation using ESCO taxonomy to mitigate hiring bias, validated by HR experts with strong performance (MAP@20: 0.71) across white-collar, blue-collar, and atypical career paths.
-                </div>
-            </div>
-            
-            <div style="margin-top: 20px;">
-                <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank" class="external-link">
-                    View Full Publication List on Google Scholar <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- CURRENT WORK -->
-        <section id="current">
-            <h2>Current Work</h2>
-            
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Conversational XAI Interfaces</span>
-                    <span class="entry-meta">Ongoing</span>
-                </div>
-                <div class="entry-desc">
-                    Developing LLM-powered conversational interfaces that enable users to interactively query model explanations rather than passively consuming static visualizations, addressing scalability challenges in interpretable AI deployment.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Enterprise Job Matching System</span>
-                    <span class="entry-meta">Ongoing</span>
-                </div>
-                <div class="entry-desc">
-                    Collaborating with Continental AG on enterprise-scale job matching system deployment, bridging research insights with production constraints and learning how interpretability requirements differ between research and industry contexts.
-                </div>
-            </div>
-        </section>
-
-        <!-- TALKS -->
-        <section id="talks">
-            <h2>Selected Talks</h2>
-            
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Beyond Ad Matching: Using CareerBERT to Map Resumes to ESCO Job Categories</span>
-                    <span class="entry-meta">May 2025</span>
-                </div>
-                <span class="entry-subtitle">9th OJA Forum · Bertelsmann Stiftung</span>
-                <div class="entry-desc">
-                    Presented CareerBERT's approach to semantic job matching using BERT embeddings and the ESCO taxonomy. Demonstrated how AI can move beyond traditional ad-matching to map unstructured resume data to standardized job categories, with evaluation results from both quantitative metrics and HR expert feedback.
-                    
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/mTh9qha7oCc?si=YOUR_EMBED_ID" 
-                                title="CareerBERT Talk at OJA Forum" 
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                allowfullscreen>
-                        </iframe>
-                    </div>
-                    
-                    <div style="margin-top: 12px;">
-                        <a href="https://www.youtube.com/watch?v=mTh9qha7oCc&t=1s" target="_blank" class="external-link">
-                            <i class="fa-brands fa-youtube"></i> Watch on YouTube (German) <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- EXPERIENCE -->
-        <section id="experience">
-            <h2>Experience</h2>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">PhD Researcher</span>
-                    <span class="entry-meta">Sept 2022 – Present</span>
-                </div>
-                <span class="entry-subtitle">University of Regensburg & TU Dresden · Supervised by Prof. Mathias Kraus & Prof. Patrick Zschech</span>
-                <div class="entry-desc">
-                    <ul>
-                        <li><strong>Experimental Research:</strong> Designed and executed multiple pre-registered behavioral experiments (N>250) using custom React/Python platforms to test interpretability assumptions.</li>
-                        <li><strong>Technical Implementation:</strong> Implemented interpretable ML systems using GAMs, Contextual Bandits, and LLMs; currently developing conversational XAI interfaces.</li>
-                        <li><strong>Validation:</strong> Established multi-method validation combining experiments, domain expert evaluation (physicians, HR professionals), and objective metrics.</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">Student Research Assistant</span>
-                    <span class="entry-meta">Mar 2021 – Aug 2022</span>
-                </div>
-                <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                <div class="entry-desc">
-                    Contributed to Computer Vision and NLP research pipelines; served as Teaching Assistant for "Introduction to Computer Science" (Harvard CS50 curriculum) supporting 80+ students.
-                </div>
-            </div>
-        </section>
-
-        <!-- EDUCATION -->
-        <section id="education">
-            <h2>Education & Awards</h2>
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">PhD in Information Systems</span>
-                    <span class="entry-meta">Exp. Oct 2026</span>
-                </div>
-                <span class="entry-subtitle">University of Regensburg & TU Dresden</span>
-                <div class="entry-desc">
-                    Thesis: "The Role of Interpretability in Human-AI Collaboration."<br>
-                    Selected for <strong>ECIS 2025 Doctoral Consortium</strong> | <strong>Best Student Paper, WI 2024</strong>.
-                </div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">M.Sc. International Information Systems</span>
-                    <span class="entry-meta">2023</span>
-                </div>
-                <span class="entry-subtitle">FAU Erlangen-Nuremberg</span>
-                <div class="entry-desc">Grade: 1.2 (Distinction). Top 3% of class. Specialization in AI & Human-Computer Interaction.</div>
-            </div>
-
-            <div class="entry">
-                <div class="entry-header">
-                    <span class="entry-title">B.A. Economics (Insurance)</span>
-                    <span class="entry-meta">2018</span>
-                </div>
-                <span class="entry-subtitle">DHBW Mannheim (Dual Study with Allianz)</span>
-                <div class="entry-desc">Grade: 1.6.</div>
-            </div>
-        </section>
-
-        <!-- SKILLS & SERVICE -->
-        <section id="skills">
-            <h2>Skills & Service</h2>
-            <div class="entry-desc">
-                <strong>Programming:</strong> Python (PyTorch, HuggingFace/Transformers, Scikit-learn), R (dplyr, ggplot2), SQL, JavaScript/React<br>
-                <strong>Cloud & Infrastructure:</strong> GCP (BigQuery, Compute Engine), AWS (EC2), Docker, Git/GitHub<br>
-                <strong>Data & Methods:</strong> MIMIC-III/IV, ESCO Taxonomy, Vector Embeddings, Pre-registered Experimental Design, Statistical Inference, Mixed-Effects Modeling<br>
-                <strong>Tools:</strong> LaTeX, SoSciSurvey/Prolific<br>
-                <strong>Languages:</strong> German (Native), English (Fluent · TOEFL 106)
-            </div>
-            <div style="margin-top: 16px;" class="entry-desc">
-                <strong>Service:</strong> Reviewer for ECIS, WI, Data Technologies and Applications<br>
-                <strong>Teaching:</strong> Master's Seminars on Deep Learning, Explainable AI, Scientific Writing
-            </div>
-        </section>
-
-        <footer>
-            <div>&copy; 2026 Julian Rosenberger</div>
-            <div>
-                Built with <i class="fa-solid fa-code"></i> and coffee
-            </div>
-        </footer>
+        </div>
     </div>
+
+    <!-- BIO -->
+    <h2>About</h2>
+    <p class="bio">
+        I am a PhD researcher at the University of Regensburg and TU Dresden, supervised by <a href="https://www.uni-regensburg.de/informatik-data-science/fakultaet/einrichtungen/nachvollziehbare-kuenstliche-intelligenz/team/prof-dr-mathias-kraus" target="_blank">Mathias Kraus</a> and <a href="https://tu-dresden.de/bu/wirtschaft/winf/isd/die-professur/interview-mit-professor-patrick-zschech" target="_blank">Patrick Zschech</a>.
+    </p>
+    <p class="bio">
+        My research interests are in interpretable machine learning, human-AI interaction, and explainable AI. I use behavioral experiments to study how people understand and work with transparent ML systems, and whether common assumptions about interpretability actually hold up in practice. I'm currently interested in conversational approaches to explainability, how personalizing models to individual users affects trust and decision-making, and how different explanation scopes (global vs. local) shape users' mental models. I also work on new visualization approaches for XAI.
+    </p>
+    <p class="bio">
+        Before my PhD, I studied International Information Systems at FAU Erlangen-Nuremberg and worked in product design at Allianz.
+    </p>
+
+    <!-- SELECTED PUBLICATIONS -->
+    <h2>Selected Publications</h2>
+
+    <div class="pub">
+        <span class="title"><a href="https://www.researchgate.net/publication/392519056" target="_blank">Navigating the Rashomon Effect: How Personalization Can Help Adjust Interpretable Machine Learning Models to Individual Users</a></span><br>
+        <span class="authors">J. Rosenberger, P. Schr&ouml;ppel, S. Kruschel, M. Kraus, P. Zschech, and M. F&ouml;rster</span><br>
+        <span class="venue">European Conference on Information Systems (ECIS), 2025</span>
+    </div>
+
+    <div class="pub">
+        <span class="title"><a href="https://doi.org/10.1016/j.eswa.2025.127043" target="_blank">CareerBERT: Matching Resumes to ESCO Jobs in a Shared Embedding Space for Generic Job Recommendations</a></span><br>
+        <span class="authors">J. Rosenberger, L. Wolfrum, S. Weinzierl, M. Kraus, and P. Zschech</span><br>
+        <span class="venue">Expert Systems with Applications, 2025</span>
+    </div>
+
+    <div class="pub">
+        <span class="title">Understanding Data-Sharing with AI Systems: The Roles of Transparency, Trust, and the Processing Entity</span><br>
+        <span class="authors">J. Rosenberger, S. Kuhlemann, M. Kraus, P. Zschech, and V. Tiefenbeck</span><br>
+        <span class="venue">Pacific Asia Journal of the Association for Information Systems (PAJAIS), in press</span>
+    </div>
+
+    <p class="scholar-link">
+        Full list on <a href="https://scholar.google.com/citations?user=dDsVyygAAAAJ&hl=en" target="_blank">Google Scholar</a>.
+    </p>
+
+    <!-- EXPERIENCE -->
+    <h2>Experience</h2>
+    <ul class="compact-list">
+        <li><strong>Doctoral Researcher</strong>, University of Regensburg (since 2024) & FAU Erlangen-Nuremberg (2022&ndash;2024)</li>
+        <li><strong>Research Assistant</strong>, FAU Erlangen-Nuremberg, 2021&ndash;2022</li>
+        <li><strong>Product Design & UX Research</strong>, Allianz Global Digital Factory, Munich, 2020&ndash;2021</li>
+    </ul>
+
+    <!-- EDUCATION -->
+    <h2>Education</h2>
+    <ul class="compact-list">
+        <li><strong>PhD in Information Systems</strong>, University of Regensburg & TU Dresden (expected 2026)</li>
+        <li><strong>M.Sc. International Information Systems</strong>, FAU Erlangen-Nuremberg, 2023</li>
+        <li><strong>Exchange Semester (CS)</strong>, University of Southern Denmark, 2021&ndash;2022</li>
+        <li><strong>B.A. Economics (Insurance)</strong>, DHBW Mannheim (dual with Allianz), 2018</li>
+    </ul>
+
+    <footer>
+        &copy; 2026 Julian Rosenberger
+    </footer>
 
 </body>
 </html>
