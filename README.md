@@ -3,7 +3,7 @@ Julian Rosenberger - Personal Website
 
 This repository hosts the source code for my personal academic website.
 
-🔗 **Live Site:** [julianrosenberger.github.io](https://julianrosenberger.github.io)
+🔗 **Live Site:** [julianrosenberger.com](https://julianrosenberger.com)
 
 ### Overview
 
